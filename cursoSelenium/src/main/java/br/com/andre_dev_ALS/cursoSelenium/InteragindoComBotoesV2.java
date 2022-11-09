@@ -18,7 +18,7 @@ public void InteragindoComBotao() {
 	
 	WebElement botao = driver.findElement(By.id("buttonSimple"));
 	botao.click();
-	Assert.assertEquals("Obrigado", botao.getAttribute("value"));
+	Assert.assertEquals("Obrigado!", botao.getAttribute("value"));
 	
 driver.quit();
 }
