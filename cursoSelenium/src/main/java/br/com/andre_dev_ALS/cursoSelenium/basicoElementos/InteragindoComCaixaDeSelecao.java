@@ -1,4 +1,4 @@
-package br.com.andre_dev_ALS.cursoSelenium;
+package br.com.andre_dev_ALS.cursoSelenium.basicoElementos;
 
 import java.util.List;
 import org.junit.Assert;

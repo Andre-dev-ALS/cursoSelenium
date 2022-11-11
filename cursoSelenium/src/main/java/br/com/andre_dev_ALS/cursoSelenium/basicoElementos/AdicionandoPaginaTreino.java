@@ -1,4 +1,4 @@
-package br.com.andre_dev_ALS.cursoSelenium;
+package br.com.andre_dev_ALS.cursoSelenium.basicoElementos;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
