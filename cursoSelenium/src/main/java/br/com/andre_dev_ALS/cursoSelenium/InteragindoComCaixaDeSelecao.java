@@ -55,11 +55,10 @@ public class InteragindoComCaixaDeSelecao {
 		Assert.assertTrue(encontrou);
 
 		driver.quit();
-	
-}
 
-	
-	public void interagirComSelecaoMultipla(){
+	}
+
+	public void interagirComSelecaoMultipla() {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
@@ -68,13 +67,11 @@ public class InteragindoComCaixaDeSelecao {
 //		combo.selectByIndex(2);
 //		combo.selectByValue("superior");
 		selecao.selectByVisibleText("2o grau completo");
-		
+
 		Assert.assertEquals("2o grau completo", selecao.getFirstSelectedOption().getText());
 		driver.quit();
 	}
-	
-	
-	
+
 	@Test
 	public void deveVerificarValoresSelecaoMultiplo() {
 		WebDriver driver = new ChromeDriver();
