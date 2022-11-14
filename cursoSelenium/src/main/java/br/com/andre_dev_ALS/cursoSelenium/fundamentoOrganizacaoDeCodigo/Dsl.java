@@ -99,5 +99,14 @@ driver.findElement(By.id(id)).click();
 	}
 	
 	
+	// clicando em um botão
+	
+	public void clicarBotãoV2(String id) {
+		driver.findElement(By.id(id)).click();
+	}
+	
+	public String obterValorElemento(String id) {
+		return driver.findElement(By.id(id)).getAttribute("value");
+	}
 	
 }
