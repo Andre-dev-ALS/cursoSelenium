@@ -109,4 +109,21 @@ driver.findElement(By.id(id)).click();
 		return driver.findElement(By.id(id)).getAttribute("value");
 	}
 	
+	
+	// interagindo com links
+	
+	public void clicarLink(String link) {
+		driver.findElement(By.linkText(link));
+	}
+	
+	//obter texto
+	
+	public String obterTexto(By by) {
+return driver.findElement(by).getText();	
+}
+	
+	public String obterTexto(String id) {
+
+return obterTexto(By.id(id));
+		}
 }
