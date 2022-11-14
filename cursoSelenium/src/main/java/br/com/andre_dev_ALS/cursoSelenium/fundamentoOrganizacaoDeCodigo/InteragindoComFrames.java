@@ -1,26 +1,41 @@
 package br.com.andre_dev_ALS.cursoSelenium.fundamentoOrganizacaoDeCodigo;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class InteragindoComFrames {
+	
+	
+
+	WebDriver driver;
+	Dsl dsl;
+
+	@Before
+	public void iniciar() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		dsl = new Dsl(driver);
+	}
+
+	@After
+	public void finalizar() {
+		driver.quit();
+	}
+
+
+	
 @Test
 public void interagirComFrames() {
-	WebDriver driver = new ChromeDriver();
-	driver.manage().window().maximize();
-	driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
-	driver.switchTo().frame("frame1");
-	driver.findElement(By.id("frameButton")).click();
-	Alert alerta = driver.switchTo().alert();
-Assert.assertEquals("Frame OK!", alerta.getText());
-	alerta.accept();
+	dsl.entrarFrame("frame1");
+	dsl.clicarBotãoV2("frameButton");
+	String msg = dsl.alertaObterTextoEAceita();
+	Assert.assertEquals("Frame OK!", msg);
 	
-	driver.switchTo().defaultContent();
-	driver.findElement(By.id("elementosForm:nome")).sendKeys("Testando o campo");
-	driver.quit();
+	dsl.sairFrame();
 }
 }

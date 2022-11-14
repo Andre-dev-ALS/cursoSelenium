@@ -156,6 +156,15 @@ return obterTexto(By.id(id));
 		alert.accept();
 	}
 	
+	// frames 
+	public void entrarFrame(String id) {
+		driver.switchTo().frame(id);
+	}
+	
+	public void sairFrame(){
+		driver.switchTo().defaultContent();
+	}
+	
 	
 	
 }
