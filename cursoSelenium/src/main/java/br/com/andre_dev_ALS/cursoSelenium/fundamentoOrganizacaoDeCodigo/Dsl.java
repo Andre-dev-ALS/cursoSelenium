@@ -20,6 +20,7 @@ public class Dsl {
 	// TextField e TextArea
 
 	public void escrever(By by, String texto) {
+		driver.findElement(by).clear();
 		driver.findElement(by).sendKeys(texto);
 	}
 
@@ -33,6 +34,12 @@ public class Dsl {
 
 	// radio button e check button
 
+	public void clicarRadio(By by) {
+		driver.findElement(by).click();
+	}
+
+
+	
 	public void clicarRadio(String id) {
 		driver.findElement(By.id(id)).click();
 	}
